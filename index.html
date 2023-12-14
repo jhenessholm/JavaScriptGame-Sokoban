@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sokoban Game</title>
+    <link rel="icon" type="image/png" href="./images/box.png?">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="headerMiddle">
+                <h1>SOKOBAN POLICE VERSION</h1>
+            </div>
+        </div>
+        <div class="main">
+            <div id="map"></div>
+            <div class="sidebar">
+                <div class="goalCounterBox">
+                    <h2 class="goals">GOALS</h2>
+                    <p id="goalCounter"></p>   
+                </div>
+                <div class="moveCounterBox">
+                    <h2 class="moves">MOVES</h2>
+                    <p id="moveCounter"></p>    
+                </div>
+                <button class="restart" onclick="createMap()">RESTART</button>
+                <div class="mapSelector">
+                    <p>SELECT MAP:</p>
+                    <select id="mapSelector" onchange="changeMap()">
+                        <option value="map01">Map 1</option>
+                        <option value="map02">Map 2</option>
+                        <option value="map03">Map 3</option>
+                        <option value="map04">Map 4</option>
+                        <option value="map05">Map 5</option>
+                        <option value="map06">Map 6</option>
+                        <option value="map07">Map 7</option>
+                        <option value="map08">Map 8</option>
+                        <option value="map09">Map 9</option>
+                        <option value="map10">Map 10</option>
+                        <option value="map11">Map 11</option>
+                        <option value="map12">Map 12</option>
+                        <option value="map13">Map 13</option>
+                        <option value="map14">Map 14</option>
+                        <option value="map15">Map 15</option>
+                    </select>    
+                </div>
+                <div style="text-align: left;">
+                    <h3><b>Instruction:</b></h3>
+                    <ul>
+                        <li><h4>Use the <span>WASD or arrow keys</span> to move the police.</h4></li>
+                        <li><h4>Put the criminals to the cells.</h4></li>
+                        <li><h4>Enjoy the game.</h4></li>
+                    </ul>
+                </div>
+                <div class="controls">
+                    <div class="rowOne">
+                        <button onclick="movePlayer(0, -1)"><i class="fa-solid fa-sort-up"></i></button>
+                    </div>
+                    <div class="rowTwo">
+                        <button onclick="movePlayer(-1, 0)"><i class="fa-solid fa-caret-left"></i></button>
+                        <button onclick="movePlayer(0, 1)"><i class="fa-solid fa-sort-down"></i></button>
+                        <button onclick="movePlayer(1, 0)"><i class="fa-solid fa-caret-right"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div id="gameCompleteMessage">
+                <h2>Congratulations! You have completed this level.</h2>
+            </div>    
+        </div>
+    </div>
+    <script src="SokobanBase.js"></script>
+    <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/05049b2b78.js" crossorigin="anonymous"></script>
+</body>
+</html>

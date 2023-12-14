@@ -1,0 +1,447 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    color: #d7ba75;
+    /* padding: 0 10%; */
+    background: pink;
+    width: 100vw;
+    height: 100vh;
+}
+
+p{
+    margin: 0;
+}
+
+h1{
+    color: beige;
+}
+
+h2{
+    color: beige;
+    font-size: 22px;
+    margin: 0 0 10px;
+}
+
+.header{
+    justify-content: center;
+    align-items: center;
+    background: navy;
+    display: flex;
+    border-bottom: solid 1px black;
+    height: 10vh;
+}
+
+.converterButton{
+    text-decoration: none;
+    color: #d7ba75;
+    margin-left: 25px;
+}
+
+.converterButton:hover{
+    text-decoration: underline;
+}
+
+.headerMiddle{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.header img{
+    width: 45px;
+    height: 45px;
+    padding: 0 45px;
+}
+
+.switchButton{
+    text-decoration: none;
+    color: #d7ba75;
+    margin-right: 25px;
+}
+
+.switchButton:hover{
+    text-decoration: underline;
+}
+
+.main{
+    display: flex;
+    flex-direction: row;
+}
+
+#map{
+    background: #383838;
+    display: grid;
+    grid-template-columns: repeat(19, 45px);
+    width: 80%;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.tile{
+    width: 45px;
+    height: 45px;
+}
+
+.tile-wall{
+    background: url(images/wall.png);
+    background-size: cover;
+}
+
+.entity-player{
+    background: url(images/player.png);
+    background-size: cover;
+    transition: transform 0.2s ease-in-out;
+}
+
+.entity-block{
+    background: url(images/box.png);
+    background-size: cover;
+}
+
+.tile-goal{
+    background: url(images/goal.png);
+    background-size: cover;
+}
+
+.entity-block-goal{
+    background: url(images/boxgoal.png);
+    background-size: cover;
+}
+
+.sidebar{
+    display: flex;
+    flex-direction: column;
+    padding: 0 2%;
+    background: #383838;
+    width: 20%;
+    text-align: center;
+    justify-content: center;
+    border-left: solid 1px black;
+}
+
+.goalCounterBox{
+    background: #2a2a2a;
+    padding: 20px 0;
+}
+
+.moveCounterBox{
+    display: none;
+    background: #2a2a2a;
+    padding-bottom: 20px;
+}
+
+.restart{
+    margin-top: 20px;
+    height: 50px;
+    font-size: 18px;
+    background-color: #2a2a2a;
+    color: beige;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+}
+
+.restart:hover{
+    background: #383838;
+    font-size: 20px;
+}
+
+.restart:active{
+    background: #302e2e ;
+    font-size: 19px;
+}
+
+.mapSelector{
+    margin-top: 20px;
+    background-color: #2a2a2a;
+    color: beige;
+    display: flex;
+    flex-direction: column;
+}
+
+.mapSelector p{
+    margin: 20px 0;
+
+}
+
+.mapSelector select{
+    margin: 0 50px 20px;
+    text-align: center;
+}
+
+.controls{
+    display: none;
+    margin-top: 60px;
+}
+
+.controls button{
+    font-size: 32px;
+    width: 40px;
+}
+
+.controls .rowOne{
+    margin-bottom: 5px;
+}
+
+
+
+.footer{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: #2a2a2a;
+    border-top: solid 1px black;
+    padding: 5px 0;
+}
+
+.footer p{
+    padding: 5px 0;
+}
+
+.footer span{
+    color: beige;
+    font-weight: bold;
+}
+
+
+.inactiveGameComplete{
+    display: none;
+}
+
+.activeGameComplete{
+    position: absolute;
+    top: 35%;
+    right: 45%;
+    text-align: center;
+    background: #2a2a2a;
+    border: solid 1px black;
+    padding: 40px;
+}
+
+.mainConverter{
+    background: #383838;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 5%;
+    align-items: center;
+}
+
+.mainConverter textarea{
+    height: 500px;
+}
+
+.input{
+    display: flex;
+    flex-direction: column;
+    flex-basis: 20%;
+}
+
+.convertButton{
+    margin: 20px;
+    padding: 20px;
+    font-size: 18px;
+    background-color: #2a2a2a;
+    color: beige;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+}
+
+.convertButton:hover{
+    background: #494747;
+    font-size: 20px;
+    padding: 19px 15px;
+}
+
+.convertButton:active{
+    background: #302e2e ;
+    font-size: 20px;
+    padding: 19px 15px;
+}
+
+
+.output{
+    display: flex;
+    flex-direction: column;
+    flex-basis: 70%;
+}
+
+
+@media screen and (max-width: 1270px) {
+    .tile{
+        width: 36px;
+        height: 36px;
+    }
+
+    .container{
+        padding: 0;
+    }
+
+    .switchButton{
+        font-size: 14px;
+    }
+
+    .converterButton{
+        font-size: 14px;
+    }
+
+    #map{
+        grid-template-columns: repeat(19, 36px);
+    }
+    
+    .sidebar{
+        padding: 0 2%;
+    }
+
+    h1{
+        font-size: 26px;
+    }
+
+    h2{
+        font-size: 16px;
+    }
+
+    p{
+        font-size: 12px;
+    }
+
+    .restart{
+        margin-top: 10px;
+        height: 40px;
+        font-size: 12px;
+    }
+
+    .restart:hover{
+        font-size: 14px;
+    }
+    
+    .restart:active{
+        font-size: 13px;
+    }
+    
+    .mapSelector{
+        margin-top: 10px;
+    }
+
+    .mapSelector p{
+        margin: 10px 0;
+    }
+
+    .mapSelector select{
+        margin: 0 30px 10px;
+    }   
+    
+    .instructions{
+        margin-top: 20px;
+    }
+        
+    .activeGameComplete{
+        top: 25%;
+        right: 40%;
+    }
+    
+    .mainConverter{
+        padding: 3%;
+    }
+
+    .convertButton{
+        margin: 12px;
+        padding: 12px;
+        font-size: 14px;
+    }
+    
+    .convertButton:hover{
+        font-size: 14px;
+        padding: 12px;
+    }
+
+    .convertButton:active{
+        font-size: 14px;
+    }
+
+}@media screen and (max-width: 900px) {
+    .tile{
+        width: 24px;
+        height: 24px;
+    }
+
+    #map{
+        grid-template-columns: repeat(19, 24px);
+    }
+    
+    .sidebar{
+        padding: 0;
+    }
+
+    h1{
+        font-size: 16px;
+    }
+
+    h2{
+        font-size: 12px;
+    }
+
+    p{
+        font-size: 10px;
+    }
+
+    .goalCounterBox{
+        padding: 5px 0;
+    }
+    
+    .moveCounterBox{
+        padding: 5px 0;
+    }
+    
+    .restart{
+        margin-top: 10px;
+        height: 30px;
+        font-size: 10px;
+    }  
+
+    .restart:hover{
+        font-size: 12px;
+    }
+    
+    .restart:active{
+        font-size: 11px;
+    }
+    
+    .mapSelector{
+        margin-top: 10px;
+    }
+
+    .mapSelector p{
+        margin: 10px 0;
+    }
+
+    .mapSelector select{
+        margin: 0 20px 10px;
+        font-size: 10px;
+    }   
+    
+    .controls button{
+        font-size: 24px;
+        width: 30px;
+    }  
+
+    .instructions{
+        margin-top: 10px;
+    }
+
+    .activeGameComplete{
+        top: 15%;
+        right: 40%;
+    }
+}
